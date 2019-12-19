@@ -1,0 +1,26 @@
+<div class="row animated fadeIn" ng-if="cm.artikliInd">
+    <div class="col-md-4" ng-repeat="artikal in cm.artikli | filter: { naziv: cm.pretraga, nazivKategorije: cm.jednaKategorija, korisnicko_ime: cm.filterKorisnik } | orderBy: cm.kriterijum : cm.smer track by $index">
+        <div>
+            <div class="card animated fadeIn" style="position: relative; margin-bottom: 20%; height: 500px; background-color: rgb(255, 130, 249); font-style:normal" >
+                <div class="view overlay hm-white-slight">
+                    <img ng-src="{{artikal.slika}}" class="img-fluid" alt="">
+                    <a href="">
+                        <div class="mask"></div>
+                    </a>
+                </div>
+                <div class="btn-group float-right" ng-if="cm.prijavljen && cm.autor(artikal)" style="position: absolute;">
+                    <button type="button" class="btn btn-sm btn-primary" ng-click="cm.pripremiZaIzmenu(artikal)">Izmeni
+                        <span aria-hidden="true">&#9998;</span></button>
+                    <button type="button" class="btn btn-sm btn-danger" ng-click="cm.ukloni(artikal.id)">Ukloni
+                        <span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title" style="color: white">{{artikal.naziv | limitTo: 20}}  {{artikal.naziv.length < 20 ? '' : '...'}}</h4>
+                    <h3 style="color: lawngreen" ><b>{{artikal.cena}} RSD</b></h3>
+                    <p class="card-text">{{artikal.opis | limitTo: 100}} {{artikal.opis.length < 100 ? '' : '...'}}</p>
+                    <button type="button" class="btn btn-md btn-info" ng-click="cm.prikaziDetalje(artikal)" href="#" style="background-color: lawngreen">Prikaži više o proizvodu </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

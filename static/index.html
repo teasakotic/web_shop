@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="shop">
+        <link rel="icon" href="images/shop.png">
+
+        <title>*TEA* makeup online shop ©</title>
+
+        <link href="bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bower_components/bootstrap/css/mdb.min.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+    </head>
+
+    <body ng-app="Aplikacija" ng-controller="Kontroler as cm" class="animated fadeIn">
+        <ng-include src=" 'parts/navbar.html' "></ng-include>
+        <main role="main">
+            <ng-include src=" 'parts/jumbotron.html' "></ng-include>
+            <ng-include src=" 'parts/registracija.html' "></ng-include>
+            <ng-include src=" 'parts/prijava.html' "></ng-include>
+            <div class="container animated fadeIn">
+                <ng-include src=" 'parts/izmenaArtikla.html' "></ng-include>
+                <ng-include src=" 'parts/unosArtikla.html' "></ng-include>
+                <ng-include src=" 'parts/artikli.html' "></ng-include>
+                <ng-include src=" 'parts/artikal.html' "></ng-include>
+			    <div class="container">
+                    <ng-include src=" 'parts/korisnickiProfil.html' "></ng-include>
+                    <ng-include src=" 'parts/izmenaKorisnika.html' "></ng-include>
+			    </div>
+            </div>
+            <hr>
+        </main>
+
+        
+        <script src="bower_components/jquery/jquery-3.2.1.min.js"></script>
+        <script src="bower_components/popper.js/popper.min.js"></script>
+        <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+        <script src="bower_components/angularjs/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/kontroler.js"></script>
+    </body>
+</html>

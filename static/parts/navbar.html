@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+        <a class="navbar-brand" href="#">
+                <img src="https://scontent.fbeg1-1.fna.fbcdn.net/v/t1.15752-9/66036120_2124641680996776_5662681506649210880_n.png?_nc_cat=104&_nc_oc=AQmNjAo5SIcOonUdPu7-Tnzx8alzoJS9KTxKzPYjCHojV6RisuXH14o76BGFKnj6_To&_nc_ht=scontent.fbeg1-1.fna&oh=c67ac7da296286b9aa955f473c0714b3&oe=5D84E58A" alt="">
+              </a>
+    <button class="navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#" ng-click="cm.dobaviArtikle()"style="color: rgb(247, 126, 146);">| Naša ponuda |<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color: rgb(247, 126, 146);">| Makeup kategorije |</a>
+                <div class="dropdown-menu animated fadeIn" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#" ng-repeat="kategorija in cm.kategorije track by $index" ng-click="cm.dobaviKategoriju(kategorija.nazivKategorije)"style="color: rgb(247, 126, 146);">{{kategorija.nazivKategorije}}</span></a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color: rgb(247, 126, 146);">| Sortiraj proizvode radi pregleda |</a>
+                <div class="dropdown-menu animated fadeIn" aria-labelledby="dropdown03">
+                    <a class="dropdown-item" href="#" ng-repeat="sort in cm.sortiranje track by $index" ng-click="cm.sortiraj(sort)"><span style="color: rgb(247, 126, 146)">{{sort}}</span></a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" ng-click="cm.promeniSmer()"style="color: rgb(247, 126, 146);">{{cm.smerSimbol}}<span ng-if="cm.smer==false">&nearr;</span><span ng-if="cm.smer">&searr;</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Pretraži svoj proizvod..." aria-label="Search" ng-model="cm.pretraga">
+            <button type="button" class="btn btn-info">Potvrdi</button>
+          </form>          
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ng-click="cm.noviPrikazi()"style="color:black;">| Dodaj novi artikl |</a>
+                </li>
+                <li class="nav-item" ng-if="!cm.prijavljen">
+                    <a class="nav-link" href="#" ng-click="cm.registracijaPrikazi()"style="color: black;">| Registruj se |</a>
+                </li>
+                <li class="nav-item" ng-if="!cm.prijavljen">
+                    <a class="nav-link" href="#" ng-click="cm.prijavaPrikazi()"style="color: black;">| Prijavi se |</a>
+                </li>
+                <li class="nav-item dropdown" ng-if="cm.prijavljen">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{cm.prijavljenKorisnik.ime}} {{cm.prijavljenKorisnik.prezime}}</a>
+                    <div class="dropdown-menu animated fadeIn" aria-labelledby="dropdown02">
+                    	<a class="dropdown-item" href="#" ng-click="cm.mojProfil()"><span style="color: rgb(247, 126, 146);">Moj profil</span></a>
+                        <a class="dropdown-item" href="#" ng-click="cm.odjava()"><span style="color: rgb(247, 126, 146);">Odjavi se</span></a>
+                    </div>
+                </li> 
+            </ul>
+        </form>   
+    </div>
+</nav>

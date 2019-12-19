@@ -1,0 +1,41 @@
+<div class="animated fadeIn" ng-if="cm.zaIzmenu.naziv">
+    <h1 class="boja"><b>*Izmena artikla*</b></h1>
+    <form name="izmenaArtikla" ng-submit="izmenaArtikla.$valid && cm.izmeniArtikal()">
+        <div class="form-group">
+            <label class="boja" for="naziv">Ime proizvoda:</label>
+            <input type="text" class="form-control" ng-class="{'is-invalid': izmenaArtikla.naziv.$invalid}" name="naziv"
+                aria-describedby="naziv" placeholder="Naziv" ng-model="cm.zaIzmenu.naziv" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="kategorija">Kategorija šminke:</label>
+            <select class="form-control border " name="kategorija" ng-class="{'is-invalid': izmenaArtikla.kategorija.$invalid}" ng-options="kategorija.nazivKategorije for kategorija in cm.kategorije track by kategorija.id" ng-model="cm.zaIzmenu.kategorija" ng-required="true">
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="boja" for="cena">Cena:</label>
+            <input type="number" min="1" step="0.01" class="form-control" ng-class="{'is-invalid': izmenaArtikla.cena.$invalid}" name="cena" aria-describedby="cena" placeholder="Cena" ng-model="cm.zaIzmenu.cena" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="kolicina">Stanje na lageru:</label>
+            <input type="number" min="1" class="form-control" ng-class="{'is-invalid': izmenaArtikla.kolicina.$invalid}" name="kolicina" aria-describedby="kolicina" placeholder="Količina" ng-model="cm.zaIzmenu.kolicina" ng-required="true">
+        </div>
+		<div class="form-group">
+            <label class="boja" for="stanje">Odobren popust:</label>
+            <select class="form-control border" name="stanje" ng-class="{'is-invalid': izmenaArtikla.stanje.$invalid}" ng-options="stanje for stanje in cm.stanja" ng-model="cm.zaIzmenu.stanje" ng-required="true">
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="boja" for="opis">Više o proizvodu:</label>
+            <textarea class="form-control border" name="opis" placeholder="Opis..." ng-model="cm.zaIzmenu.opis"></textarea>
+        </div>
+        <div class="form-group">
+            <label class="boja" for="slika">Slika proizvoda:</label>
+            <input type="text" class="form-control" name="slika" aria-describedby="slika"
+                placeholder="URL slike" ng-model="cm.novi.slika_URL">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" ng-disabled="izmenaArtikla.$invalid" value="Izmeni">
+            <button class="btn btn-danger" type="button" ng-click="cm.odustaniOdIzmene()">Nazad</button>
+        </div>
+    </form>
+</div>

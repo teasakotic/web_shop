@@ -1,0 +1,70 @@
+
+<form class="animated fadeIn" name="registracija" ng-if="cm.registracijaInd" ng-submit="registracija.$valid && cm.proveriKorisnickoIme() && cm.proveriLozinke() && cm.dodajKorisnika()">
+	<div class="container">
+        <div class="centered-form">
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+		    		<h3 class="panel-title"><b>Potrebna ti je najbolja šminka u gradu? Registruj se besplatno!</b></h3>
+		 		</div>
+		 		<div class="panel-body">
+		    		<form role="form">
+		    			<div class="row">
+		    				<div class="col-xs-6 col-sm-6 col-md-6">
+		    					<div class="form-group">
+		                			<input type="text" name="ime" class="form-control input-sm" placeholder="Ime" ng-model="cm.noviKorisnik.ime" ng-class="{'is-invalid': registracija.ime.$invalid}" required>
+		    					</div>
+		    				</div>
+		    				<div class="col-xs-6 col-sm-6 col-md-6">
+		    					<div class="form-group">
+		    						<input type="text" name="prezime" class="form-control input-sm" placeholder="Prezime" ng-model="cm.noviKorisnik.prezime" ng-class="{'is-invalid': registracija.prezime.$invalid}" required>
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<div class="form-group">
+		    				<input type="email" name="email" class="form-control input-sm" placeholder="Email adresa" ng-model="cm.noviKorisnik.email" ng-class="{'is-invalid': registracija.email.$invalid}" required>
+		    			</div>
+		    			<div class="form-group">
+		    				<input type="text" name="korisnicko_ime" class="form-control input-sm" placeholder="Korisničko ime" ng-model="cm.noviKorisnik.korisnicko_ime" ng-class="{'is-invalid': registracija.korisnicko_ime.$invalid}" required>
+		    			</div>
+		    			<div class="form-group">
+		    				<input type="text" name="adresa" class="form-control input-sm" placeholder="Adresa" ng-model="cm.noviKorisnik.adresa" ng-class="{'is-invalid': registracija.adresa.$invalid}" required>
+		    			</div>
+		    			
+		    			<div class="form-group">
+		    				<input type="text" name="telefon" class="form-control input-sm" placeholder="Broj telefona" ng-model="cm.noviKorisnik.telefon">
+						</div>
+						<div class="form-group">
+		    				<input type="text" name="stanje_racuna" class="form-control input-sm" placeholder="Novac sa kojim raspolazete" ng-model="cm.noviKorisnik.stanje_racuna">
+		    			</div>
+		    			<div class="form-group">
+            				<input type="text" class="form-control" name="profilna_slika" aria-describedby="profilna_slika"
+                			placeholder="URL slike" ng-model="cm.noviKorisnik.profilna_slika_URL">
+        				</div>
+		    			<div class="row">
+		    				<div class="col-xs-6 col-sm-6 col-md-6">
+		    					<div class="form-group">
+		    						<input type="password" name="lozinka" class="form-control input-sm" placeholder="Lozinka" ng-model="cm.noviKorisnik.lozinka" ng-class="{'is-invalid': registracija.lozinka.$invalid}" required>
+		    					</div>
+		    				</div>
+		    				<div class="col-xs-6 col-sm-6 col-md-6">
+		    					<div class="form-group">
+		    						<input type="password" name="lozinka2" class="form-control input-sm" placeholder="Ponovljena lozinka" ng-model="cm.lozinka2" ng-class="{'is-invalid': registracija.lozinka2.$invalid}" required>
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="registracija.$invalid" style="color: rgb(247, 126, 146);"><b>Registruj se</b></button>
+						<br>
+		    			<div class="alert alert-danger" role="alert" ng-if="cm.noviKorisnik.lozinka == null || cm.lozinka2 == null">
+		                    Lozinke se ne poklapaju.
+		                </div>
+		                <div class="alert alert-danger" role="alert" ng-if="cm.noviKorisnik.korisnicko_ime == null">
+		                    Korisničko ime već postoji. Izaberite neko drugo.
+						</div>
+						<img src="https://scontent.fbeg1-1.fna.fbcdn.net/v/t1.15752-9/65769699_481783039260560_9207497232138371072_n.png?_nc_cat=105&_nc_oc=AQk2Nl2rpIplaU5_2qxsJlmD-QRPzQ5W2FNp3-ODDOUPgzIHvsZV3_izu7UTki0f_RE&_nc_ht=scontent.fbeg1-1.fna&oh=9da1465fcd8873f4ae48886bebde388f&oe=5DB85E8A" class="rounded mx-auto d-block" alt="...">
+
+		    		</form>
+		    	</div>
+    		</div>
+    	</div>
+    </div>
+</form>

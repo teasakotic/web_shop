@@ -1,0 +1,54 @@
+<div class="container animated fadeIn" ng-if="cm.detaljiInd">
+    <div class="card-deck mb-3 text-center">
+	    <div class="card mb-4 box-shadow">
+	        <div class="card-header">
+	        	<h4 class="my-0 font-weight-normal" style="color: rgb(247, 126, 146);"><i>{{cm.zaPrikaz.naziv}}</i></h4>
+	        </div>
+	        <div class="card-body">
+                <img ng-src="{{cm.zaPrikaz.slika}}" class="img-fluid" alt="" style="height: 40%;width: 40%;">
+	            <h1 class="card-title pricing-card-title"><b>{{cm.zaPrikaz.cena}} dinara</b><small class="text-muted">po komadu</small></h1>
+			    <div class="row">
+			    	<div class="card-deck mb-3 text-center p-2 mw-100">
+					    <div class="card mb-4 box-shadow">
+					        <div class="card-header">
+					        	<h4 class="my-0 font-weight-normal" style="color: rgb(247, 126, 146);">Kategorija Vaše šminke</h4>
+					        </div>
+					        <div class="card-body">
+					            <ul class="list-unstyled mt-3 mb-4">
+					             	<li>{{cm.zaPrikaz.kategorija.nazivKategorije}}</li>
+					            </ul>
+					        </div>
+					    </div>
+				    </div>
+				    <div class="card-deck mb-3 text-center p-2 mw-100">
+					    <div class="card mb-4 box-shadow">
+					        <div class="card-header">
+					        	<h4 class="my-0 font-weight-normal"style="color: rgb(247, 126, 146);">Da li imate popust?</h4>
+					        </div>
+					        <div class="card-body">
+					            <ul class="list-unstyled mt-3 mb-4">
+					             	<li>{{cm.zaPrikaz.stanje}}</li>
+					            </ul>
+					        </div>
+					    </div>
+				    </div>
+				    <div class="card-deck mb-3 text-center p-2 mw-100">
+					    <div class="card mb-4 box-shadow">
+					        <div class="card-header">
+					        	<h4 class="my-0 font-weight-normal" style="color: rgb(247, 126, 146);">Više o proizvodu koji ste izabrali</h4>
+					        </div>
+					        <div class="card-body">
+                                <p>{{cm.zaPrikaz.opis}}</p>
+					        </div>
+					    </div>
+				    </div>
+			    </div>
+				<div class="form-group" ng-if="!cm.autor(cm.zaPrikaz)" style="width: 20%; margin: auto;">
+                    <label for="kolicina" style="color: rgb(247, 126, 146);">Koliko komada proizvoda želite da kupite?</label>
+                    <input type="number" min="0" max="{{cm.zaPrikaz.kolicina}}" class="form-control" name="kolicina" placeholder="Količina" ng-model="cm.kolicinaKupi">
+                    <button type="button" class="btn btn-lg btn-primary btn-block" ng-click="cm.kupi(cm.zaPrikaz)"><b>Dodaj u korpu</b></button>
+                </div>
+	        </div>
+	    </div>
+    </div>
+</div>

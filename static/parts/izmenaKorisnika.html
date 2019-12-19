@@ -1,0 +1,58 @@
+<div class="animated fadeIn" ng-if="cm.izmenaKorisnik.ime">
+    <h1 class="boja"><b>*Izmeni svoj nalog*</b></h1>
+    <form name="izmenaKorisnika" ng-submit="izmenaKorisnika.$valid && cm.proveriLozinke() && cm.izmeniKorisnika()">
+        <div class="form-group">
+            <label class="boja" for="ime">Ime:</label>
+            <input type="text" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.ime.$invalid}" name="ime"
+                aria-describedby="ime" placeholder="Ime" ng-model="cm.izmenaKorisnik.ime" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="prezime">Prezime:</label>
+            <input type="text" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.prezime.$invalid}" name="prezime"
+                aria-describedby="prezime" placeholder="Prezime" ng-model="cm.izmenaKorisnik.prezime" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="email">E-mail adresa:</label>
+            <input type="text" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.email.$invalid}" name="email"
+                aria-describedby="email" placeholder="Email adresa" ng-model="cm.izmenaKorisnik.email" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="korisnickoIme">Korisničko ime:</label>
+            <input type="text" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.korisnickoIme.$invalid}" name="korisnickoIme"
+                aria-describedby="korisnickoIme" placeholder="Korisničko ime" ng-model="cm.izmenaKorisnik.korisnicko_ime" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="adresa">Adresa:</label>
+            <input type="text" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.adresa.$invalid}" name="adresa"
+                aria-describedby="adresa" placeholder="Adresa" ng-model="cm.izmenaKorisnik.adresa" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="telefon">Broj telefona:</label>
+            <input type="text" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.telefon.$invalid}" name="telefon"
+                aria-describedby="telefon" placeholder="Broj telefona" ng-model="cm.izmenaKorisnik.telefon" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="lozinka">Lozinka:</label>
+            <input type="password" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.lozinka.$invalid}" name="lozinka"
+                aria-describedby="lozinka" placeholder="Lozinka" ng-model="cm.izmenaKorisnik.lozinka" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="boja" for="lozinka2">Ponovljena lozinka:</label>
+            <input type="password" class="form-control" ng-class="{'is-invalid': izmenaKorisnika.lozinka2.$invalid}" name="lozinka2"
+                aria-describedby="lozinka2" placeholder="Ponovljena lozinka" ng-model="cm.lozinka2" ng-required="true">
+        </div>
+        <div class="form-group">
+            <label for="profilna_slika" style="color: white;">Profilna slika:</label>
+            <input type="text" class="form-control" name="profilna_slika" aria-describedby="profilna_slika"
+            placeholder="URL slike" ng-model="cm.izmeniKorisnik.profilna_slika_URL">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" ng-disabled="izmenaKorisnika.$invalid" value="Izmeni">
+            <button class="btn btn-danger" type="button" ng-click="cm.odustaniOdIzmene()">Nazad</button>
+        </div>
+        <br>
+        <div class="alert alert-danger" role="alert" ng-if="cm.izmenaKorisnik.lozinka == null || cm.lozinka2 == null">
+            Lozinke se ne poklapaju.
+        </div>
+    </form>
+</div>

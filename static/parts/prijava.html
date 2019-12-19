@@ -1,0 +1,27 @@
+
+    </div><form name="prijava" class="form-signin animated fadeIn" ng-if="cm.prijavaInd" ng-submit="prijava.$valid && cm.prijava()">
+    <h2 class="form-signin-heading"><b>Prijavi se na svoj nalog radi kupovine!</b></h2>
+    <label for="username" class="sr-only">Korisničko ime (username)</label>
+    <input type="text" id="username" name="username" class="form-control" placeholder="Korisničko ime (username)" ng-model="cm.korisnicko_ime" ng-class="{'is-invalid': prijava.username.$invalid}" required autofocus>
+    <label for="inputPassword" class="sr-only">Lozinka (password)</label>
+    <input type="password" id="inputPassword" name="lozinka" class="form-control" placeholder="Lozinka (password)" ng-model="cm.lozinka" ng-class="{'is-invalid': prijava.lozinka.$invalid}" required>
+    <div class="form-check form-check-inline">
+
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+            <label class="form-check-label" style="color: white">Zapamti korisničko ime i lozinku</label>
+            </div>
+  
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="prijava.$invalid" style="color: rgb(247, 126, 146);"><b>Prijavi se</b></button>
+    <br>
+    
+    <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/9PFyJXS161Q" allowfullscreen></iframe>
+            </div>
+            <img src="https://scontent.fbeg1-1.fna.fbcdn.net/v/t1.15752-9/65769699_481783039260560_9207497232138371072_n.png?_nc_cat=105&_nc_oc=AQk2Nl2rpIplaU5_2qxsJlmD-QRPzQ5W2FNp3-ODDOUPgzIHvsZV3_izu7UTki0f_RE&_nc_ht=scontent.fbeg1-1.fna&oh=9da1465fcd8873f4ae48886bebde388f&oe=5DB85E8A" class="rounded mx-auto d-block" alt="...">
+
+    <div class="alert alert-danger" role="alert" ng-if="cm.korisnicko_ime==null || cm.lozinka==null">
+        UPS! Netačna email adresa ili lozinka hmm, pokušajte ponovo.
+
+</form>
